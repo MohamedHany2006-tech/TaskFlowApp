@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
            
             const Text(
               'The best to do list application for you',
-              style: TextStyle(fontSize: 16, color: Colors.white),
+              style: TextStyle(fontSize: 16, color:ColorManager.NeutralWhite),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 40), 
@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   width: 36,
                   height: 12,
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.9), // لون فاتح مظلل
+                    color: ColorManager.NeutralWhite,
                     borderRadius: BorderRadius.circular(6),
                   ),
                 ),
@@ -55,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   width: 12,
                   height: 12,
                   decoration: const BoxDecoration(
-                    color: Color(0xFFB0BEC5), // لون رمادي فاتح
+                    color: Color(0xFFB0BEC5),  
                     shape: BoxShape.circle,
                   ),
                 ),

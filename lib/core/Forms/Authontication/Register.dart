@@ -2,8 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:to_do_list/core/Forms/login/manager/Login_Cubit.dart';
-import 'package:to_do_list/core/Forms/login/manager/Login_State.dart';
+import 'package:to_do_list/core/Forms/Authontication/manager/Auth_Cubit.dart';
+import 'package:to_do_list/core/Forms/Authontication/manager/Auth_State.dart';
 import 'package:to_do_list/core/Share/widgets/cutome_main_btn.dart';
 import 'package:to_do_list/core/Share/widgets/text_input_field.dart';
 import 'package:to_do_list/core/Utilis/unints.dart';
@@ -42,7 +42,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocConsumer<LoginCubit, LoginState>(
+      body: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is SuccessRegisterState) {
             context.go(Routes.kHome);
@@ -158,7 +158,7 @@ class _RegisterState extends State<Register> {
                             onPressed: () {
                               if (formKey.currentState!.validate()) {
                                 context
-                                    .read<LoginCubit>()
+                                    .read<AuthCubit>()
                                     .createAccount(
                                       email:
                                           _emailController.text.trim(),

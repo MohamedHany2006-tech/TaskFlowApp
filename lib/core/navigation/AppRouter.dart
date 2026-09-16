@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:to_do_list/Feature/Home/Presentation/view/Home_view.dart';
-import 'package:to_do_list/core/Forms/login/login_view.dart';
-import 'package:to_do_list/core/Forms/login/manager/Login_Cubit.dart';
+import 'package:to_do_list/core/Forms/Authontication/login_view.dart';
+import 'package:to_do_list/core/Forms/Authontication/manager/Auth_Cubit.dart';
 import 'package:to_do_list/Feature/Onboarding/Onboarding_view.dart';
-import 'package:to_do_list/core/Forms/Register.dart';
+import 'package:to_do_list/core/Forms/Authontication/Register.dart';
 import 'package:to_do_list/Feature/welcome/welcome.dart';
 import 'package:to_do_list/core/navigation/Routes.dart';
 import 'package:to_do_list/Feature/Splash/SplashScreen.dart';
@@ -35,7 +35,7 @@ class AppRouter {
       path: Routes.kLogin,
       builder: (context, state) {
         return BlocProvider(
-          create: (context) => LoginCubit(
+          create: (context) => AuthCubit(
             AuthServices(),
           ),
           child: const LoginView(),
@@ -47,7 +47,7 @@ class AppRouter {
       path: Routes.kRegister,
       builder: (context, state) {
         return BlocProvider(
-          create: (context) => LoginCubit(
+          create: (context) => AuthCubit(
             AuthServices(),
           ),
           child: const Register(),

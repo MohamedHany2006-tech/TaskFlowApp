@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:to_do_list/core/Forms/login/manager/Login_State.dart';
+import 'package:to_do_list/core/Forms/Authontication/manager/Auth_State.dart';
 import 'package:to_do_list/core/Utilis/Firebase/Auth.dart';
 
-class LoginCubit extends Cubit<LoginState> {
-  LoginCubit(this.authServices) : super(LoginInitialState());
+class AuthCubit extends Cubit<AuthState> {
+  AuthCubit(this.authServices) : super(AuthInitialState());
 
   final AuthServices authServices;
 
@@ -19,10 +19,10 @@ class LoginCubit extends Cubit<LoginState> {
         password: password,
       );
 
-      emit(SuccessLoginState());
+      emit(SuccessAuthState());
     } catch (e) {
       emit(
-        FailureLoginState(
+        FailureAuthState(
           errorMessage: e.toString(),
         ),
       );
