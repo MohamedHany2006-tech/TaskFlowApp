@@ -11,7 +11,7 @@ void showLoadingDialog({
 }) {
   showDialog(
     context: context,
-    barrierDismissible: false,
+    barrierDismissible: true,
     builder: (context) => Center(
       child: Container(
         decoration: BoxDecoration(
